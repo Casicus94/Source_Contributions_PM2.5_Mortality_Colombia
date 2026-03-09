@@ -1,0 +1,40 @@
+&CONTROL
+ anthro_dir = '/ptmp/acasallasg/Sectors/TOTALS'
+ wrf_dir   = '/ptmp/acasallasg/Sectors/TOTALS'
+
+ src_file_prefix = ''
+ src_file_suffix = '_TOTALS_fix.nc'
+
+ src_names = 'NMVOC(16)','PM10(1)','PM2.5(1)','BC(12)','OC(12)','NOx(1)','CO(12)','SO2(64)','NH3(17)'
+ domains = 2
+ emissions_zdim_stag = 1
+
+emis_map = 'PM_25(a) -> 1*PM2.5',
+           'PM_10(a) -> 1*PM10',
+           'BC(a) -> 0.75*BC',
+           'OC(a) -> 0.75*OC',
+           'PAR->0.40*NMVOC',
+           'OLE->0.10*NMVOC',
+           'TOL->0.10*NMVOC',
+           'XYL->0.10*NMVOC',
+           'FORM->0.05*NMVOC',
+           'ALD2->0.10*NMVOC',
+           'ETH->0.05*NMVOC',
+           'ETHA->0.05*NMVOC',
+           'ISOP->0.05*NMVOC',
+           'NO -> 0.9*NOx',
+           'NO2 -> 0.1*NOx',
+           'CO -> 1*CO',
+           'SO2 -> 1*SO2',
+           'NH3 -> 1*NH3',
+ 
+ sub_categories = 'emis_tot'
+ serial_output     = .False.
+ start_output_time  = '2019-01-01_00:00:00'
+ stop_output_time   = '2019-12-31_23:00:00'
+ output_interval = 3600
+ data_yrs_offset = 0
+/
+!https://forum.mmm.ucar.edu/threads/error-opening-wrffirechemi_d01.12284/
+!ln -s wrffirechemi_d01_2020-01-01_00\:00\:00 wrffirechemi_d01
+
