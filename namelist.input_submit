@@ -145,7 +145,7 @@
  phot_opt                            = 1,
  gas_drydep_opt                      = 1,
  aer_drydep_opt                      = 1,
- bio_emiss_opt                       = 0,
+ bio_emiss_opt                       = 3,
  ne_area                             = 0,
  dust_opt                            = 1,
  dmsemis_opt                         = 1,

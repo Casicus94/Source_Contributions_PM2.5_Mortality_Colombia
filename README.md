@@ -1,5 +1,5 @@
 # Source_Contributions_PM2.5_Mortality_Colombia
-Analysis scripts supporting the study of PM$_{2.5}$ source contributions and pollution-related mortality in Colombia using WRF-Chem simulations and sectoral emission sensitivity experiments. This paper is submitted to Geohealth
+Analysis scripts supporting the study of PM$_{2.5}$ source contributions and pollution-related mortality in Colombia using WRF-Chem simulations and sectoral emission sensitivity experiments. This paper has been accepted in GeoHealth
 
 This repository contains the scripts used to prepare emissions, process model outputs, and compute sectoral contributions to PM₂.₅ concentrations for the study “Source Contributions to PM₂.₅ Related Premature Mortality in Colombia.”
 
@@ -48,3 +48,19 @@ Evaluates model performance against observations and reference datasets.
 
 #### Test_substractions_submit.ipynb
 Diagnostic notebook used to verify emission subtraction and sector attribution.
+
+
+## Revision analysis (`revision_analysis/`)
+Scripts added during the GeoHealth revision. Run from the project folder (paths are relative to it, or pass `--root`).
+
+| Script | Purpose |
+|---|---|
+| `make_table1.py` | Table 1: mortality contributions by sector and department (`--method brendan` reproduces the submitted table, `--method corrected` the revised one). |
+| `make_fig2.py`, `make_fig2d.py` | Figure 2: WRF-Chem PM₂.₅ evaluation against ACAG V6 and ground stations. |
+| `make_figS1.py`, `make_figS2_S3.py` | Figures S1–S3: ACAG vs stations, and monthly evaluation. |
+| `make_fig5_leading_sector.py` | Figure 5: leading sector of PM₂.₅-attributable mortality per department. |
+| `Domains_figure_with_inset.py` | Figure 1: model domains with the Aburrá Valley inset. |
+| `AWB_vs_FINN_check.py`, `AWB_FINN_overlap_and_masking.py`, `VIIRS_fire_climatology_check.py` | Checks on double counting between EDGAR agricultural waste burning and FINN fires, and on fire climatology (VIIRS). |
+| `sensitivity_bias_R3M3.py`, `common.py` | Sensitivity of national sectoral mortality shares to model bias. |
+
+`namelist.input_submit` was updated to the final configuration (`bio_emiss_opt = 3`).
